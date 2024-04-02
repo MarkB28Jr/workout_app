@@ -1,8 +1,8 @@
 const Workout = require('../models/workout');
 
-// SHOW ALL Workout
+// EXERCISES
 const exercise = async (req, res) => {
-    res.render('workouts/exercise', { title: 'Exercise'})
+    res.render('exercises/index', { title: 'Exercise'})
 }
 
 // SHOW
@@ -12,7 +12,7 @@ const history = async (req, res) => {
 
 // CREATE
 const workout = async (req, res) => {
-    res.render('workouts/workouts', { title: 'Workouts'})
+    res.render('workouts/workout', { title: 'Workouts'})
 }
 
 // PROFILE

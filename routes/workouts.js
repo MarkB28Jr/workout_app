@@ -4,7 +4,7 @@ var router = express.Router();
 const workoutsCtrl = require('../controllers/workouts')
 
 // GET /exercises
-router.get('/exercise', workoutsCtrl.exercise);
+router.get('/index', workoutsCtrl.exercise);
 
 // GET /history
 router.get('/history', workoutsCtrl.history);
