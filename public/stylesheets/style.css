@@ -1,8 +1,30 @@
-body {
-  padding: 50px;
+body, nav {
+  display: flex;
+  flex-direction: column;
+  position: center;
+  margin: 0 auto;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  margin: 20px;
+}
+nav {
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding-top: 50px;
 }
 
 a {
-  color: #00B7FF;
+  color: #0051ff;
+}
+
+tr  {
+  height: 3vmin;
 }

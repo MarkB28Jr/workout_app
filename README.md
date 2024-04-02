@@ -18,7 +18,6 @@ I would like to find a API or two to take all of the workouts so I dont have to 
 
 [Project-Board](https://trello.com/b/q0jl09YV/my-trello-board)
 
-
 # App Breakdown
 
 I will have have 5 pages

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <title>
+            <%= title %>
+        </title>
+    </head>
+    
+    <body>
+        <nav>
+            <a href="/" <%- title==='HOME' ? 'class="active"' : '' %>>HOME</a>&nbsp;|&nbsp;
+            <a href="/workouts/profile" <%- title==='PROFILE' ? 'class="active"' : '' %>>PROFILE</a>&nbsp;|&nbsp;
+            <a href="/workouts/history" <%- title==='HISTORY' ? 'class="active"' : '' %>>HISTORY</a>&nbsp;|&nbsp;
+            <a href="/workouts/workouts" <%- title==='WORKOUTS' ? 'class="active"' : '' %>>WORKOUTS</a>&nbsp;|&nbsp;
+            <a href="/workouts/exercise" <%- title==='EXERCISES' ? 'class="active"' : '' %>>EXERCISES</a>
+        </nav>
+        <main>
+            <h1><%= title %></h1>
+            
