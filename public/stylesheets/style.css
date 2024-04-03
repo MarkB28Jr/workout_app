@@ -1,4 +1,5 @@
-body, nav {
+body,
+nav {
   display: flex;
   flex-direction: column;
   position: center;
@@ -13,6 +14,7 @@ main {
   justify-content: center;
   margin: 20px;
 }
+
 nav {
   flex-direction: row;
   justify-content: center;
@@ -25,7 +27,7 @@ a {
   color: #0051ff;
 }
 
-tr  {
+tr {
   height: 3vmin;
 }
 
@@ -40,3 +42,44 @@ tr  {
   height: 30px;
 }
 
+#submit {
+  display: flex;
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vmin;
+}
+
+button {
+  display: flex;
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 3vmin;
+  width: 8vmin;
+  font-size: 2vmin;
+  border: .15vmin solid black;
+}
+
+#workout {
+  display: grid;
+  grid-template-columns: 200px repeat(4, 10fr);
+  padding-top: 1vmin;
+}
+
+#muscleList {
+  display: grid;
+  grid-template-columns: 200px repeat(4, 10fr);
+  padding-bottom: 1vmin;
+  border-bottom: .25vmin solid black;
+  background: grey;
+  color: white;
+}
+
+#templateWorkout {
+  display: grid;
+  grid-template-columns: 200px repeat(4, 10fr);
+  padding-top: 1vmin;
+}

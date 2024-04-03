@@ -10,9 +10,12 @@ router.get('/template', workoutsCtrl.template);
 router.get('/history', workoutsCtrl.history);
 
 // GET /workouts
-router.get('/workouts', workoutsCtrl.workout);
+router.get('/workouts', workoutsCtrl.workouts);
 
 // GET /profile
 router.get('/profile', workoutsCtrl.profile);
+
+// POST workout
+router.post('/', workoutsCtrl.create)
 
 module.exports = router;
