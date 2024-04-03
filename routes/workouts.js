@@ -4,7 +4,7 @@ var router = express.Router();
 const workoutsCtrl = require('../controllers/workouts')
 
 // GET /exercises
-router.get('/index', workoutsCtrl.exercise);
+router.get('/template', workoutsCtrl.template);
 
 // GET /history
 router.get('/history', workoutsCtrl.history);
@@ -14,6 +14,5 @@ router.get('/workouts', workoutsCtrl.workout);
 
 // GET /profile
 router.get('/profile', workoutsCtrl.profile);
-
 
 module.exports = router;

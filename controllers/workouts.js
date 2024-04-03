@@ -1,8 +1,8 @@
 const Workout = require('../models/workout');
 
 // EXERCISES
-const exercise = async (req, res) => {
-    res.render('exercises/index', { title: 'Exercise'})
+const template = async (req, res) => {
+    res.render('workouts/template', { title: 'Template'})
 }
 
 // SHOW
@@ -16,13 +16,13 @@ const workout = async (req, res) => {
 }
 
 // // PROFILE
-// const profile = async (req, res) => {
-//     res.render('workouts/profile', { title: 'Profile'})
-// }
+const profile = async (req, res) => {
+    res.render('workouts/profile', { title: 'Profile'})
+}
 
 module.exports = {
-    exercise,
     history,
     workout,
-    // profile,
+    template,
+    profile,
 }

@@ -1,25 +1,31 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema
 
-// const historySchema = new Schema({
-
-// })
-
-const exerciseSchema = new Schema({
-    name: {
+const templateSchema = new Schema({
+    muscleGroups: {
         type: String,
+        enum: muscleGroups = [
+            'Quadriceps',
+            'Glutes_Hamstrings',
+            'Calves',
+            'Chest',
+            'Back',
+            'Shoulders',
+            'Triceps',
+            'Biceps',
+            'Abs',
+          ],
         required: true
     },
-    muscleGroup: {
+    exercise: {
         type: String,
-        enum: muscleGroup,
+        enum: muscleGroups,
         required: true,
     },
-
 })
 
-const templateSchema = new Schema({
+const workoutSchema = new Schema({
+    template: [templateSchema],
     sets: {
         type: Number,
     },
@@ -29,19 +35,6 @@ const templateSchema = new Schema({
     weight: {
         type: Number
     },
-    exercises: [exerciseSchema]
-})
-
-const workoutSchema = new Schema({
-    musclegroup: {
-        type: String,
-        enum: ['Quadriceps', 'Glutes_Hamstrings', 'Calves', 'Chest', 'Back', 'Shoulders', 'Triceps', 'Biceps', 'Abs'],
-        required: true,
-    },
-
-})
-const historySchema = new Schema({
-
 })
 
 module.exports = mongoose.model('Workout', workoutSchema)

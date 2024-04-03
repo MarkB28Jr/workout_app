@@ -1,5 +1,24 @@
 <%- include('../partials/header') %>
 
+    <label for="firstName">Name:</label>
+    <input type="text" name="firstName" placeholder="Enter your First Name"><br>
 
+    <label for="lastName">Name:</label>
+    <input type="text" name="lastName" placeholder="Enter your Last Name"><br>
 
-<%- include('../partials/footer') %>
+    <label for="gender">Gender</label>
+    <select name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select><br>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required placeholder="Enter Email Address"><br>
+
+    <label for="username">Enter Username</label>
+    <input type="text" name="username"><br>
+
+    <button>Submit</button>
+
+    <%- include('../partials/footer') %>
