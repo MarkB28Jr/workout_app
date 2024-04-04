@@ -1,146 +1,24 @@
 <%- include('../partials/header') %>
 
-<form id="add-exercise" action="/template" method="POST"></form>
-    <div id="templateWorkout">
+<div id="muscleList">
+    <div>Exercise</div>
+</div>
 
-        <label><strong>1: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
+<form id="addExercises" action="/workouts" method="POST">
+    <label for="exercisesName">Enter a Name for the Exercises:</label>
 
+<input type="text" name="name" placeholder="Enter Name of Workout"><br>
+    <% for (let i=0; i < 6; i++) { %>
+        <div>
+            <label for="exerciseName">Enter a Exercise:</label>
+            <input type="text" name="exercise<%= i %>" placeholder="Enter Exercise">
+        </div>
+        <div>
 
+    <% } %>
 
-        <label><strong>2: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
-
-
-
-
-
-
-        <label><strong>3: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
-
-
-
-        <label><strong>4: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
-
-
-
-        <label><strong>5: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
-
-
-        <label><strong>6: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
-
-
-        <label><strong>7: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
-
-
-        <label><strong>8: Choose a Muscle Group:</strong></label>
-        <select name="muscleGroups" id="muscleGroups">
-            <option value="Chest">Chest</option>
-            <option value="Quadriceps">Quadriceps</option>
-            <option value="Glutes_Hamstrings">Glutes_Hamstrings</option>
-            <option value="Calves">Calves</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Abs">Abs</option>
-        </select>
-        <label><strong>Exercises:</strong></label>
-        <input type="text" name="exercise">
-        
-        
-    </div>
-    <input id="enter" type="submit" value="Select">
-</form><br>
+<button name="submit">Submit</button>
+</form>
 
 
     <%- include('../partials/footer') %>

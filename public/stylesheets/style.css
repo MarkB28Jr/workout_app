@@ -98,3 +98,9 @@ button {
   height: 75vmin;
   padding: 5vmin;
 }
+
+#addExercises{
+  display: flex;
+  flex-direction: column;
+  /* right: auto; */
+}

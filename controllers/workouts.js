@@ -6,7 +6,6 @@ const exercises = async (req, res) => {
     res.render('workouts/template', { title: 'Template' })
 }
 
-
 // HISTORY PAGE 
 const history = async (req, res) => {
     try {
@@ -23,42 +22,25 @@ const workouts = async (req, res) => {
     res.render('workouts/workout', { title: 'Workouts' })
 }
 
-// PROFILE PAGE
-const profile = async (req, res) => {
-    res.render('workouts/profile', { title: 'Profile' })
-}
 
 // CREATE EXERCISES IN Workout PAGE
 
-
-// async function create(req, res) {
-//     try {
-
-//         await Workout.exercises.create(req.body);
-//         // await workout.save();
-//         res.redirect('/workouts/workouts');
-//     } catch (err) {
-//         console.log(err);
-//         // res.render('movies/new', { errorMsg: err.message });
-//     }
-// }
-
-
-
-
-
-
-
-
 const create = async (req, res) => {
     try {
-        await Workout.exercises.create(req.body);
-        res.redirect('/workouts/workouts')
+        await Workout.create(req.body);
+        res.redirect('/workouts/template')
     } catch (err) {
         console.log(err)
         res.status(500).send('Failed to make Execise')
     }
 }
+
+
+
+
+
+
+
 
 // HISTORY OF PREVIOUS WORKOUTS
 
@@ -75,8 +57,26 @@ module.exports = {
     history,
     workouts,
     exercises,
-    profile,
     create,
     // createExercise,
 }
 // POST MVP CREATE MY OWN TYPE OF EXERCISES
+
+
+// async function create(req, res) {
+//     try {
+
+//         await Workout.exercises.create(req.body);
+//         // await workout.save();
+//         res.redirect('/workouts/workouts');
+//     } catch (err) {
+//         console.log(err);
+//         // res.render('movies/new', { errorMsg: err.message });
+//     }
+// }
+// 
+
+// PROFILE PAGE
+// const profile = async (req, res) => {
+//     res.render('workouts/profile', { title: 'Profile' })
+// }
