@@ -35,8 +35,21 @@ const create = async (req, res) => {
     }
 }
 
-
-
+const createArr = async (req, res) => {
+    const flight = await Flight.findById(req.params.id);
+    flight.destinations.push(req.body)
+    const now = new Date();
+    Flight.arrivals = now;
+    const dt = now;
+    let departDefault = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
+    departDefault += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
+    try {
+        await flight.save()
+    } catch (err) {
+        console.log(err)
+    }
+    res.redirect(`/flights/${flight._id}`)
+}
 
 
 

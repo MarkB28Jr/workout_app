@@ -6,16 +6,12 @@
         <div>Reps</div>
         <div>Weight</div>
     </div>
-    
-<form id="" action="/workouts" method="POST">
-    <% for (let i=0; i < 6; i++) { %>
-        <div id="workoutPlan">
-            <div>
-                <input type="text" name="exercise">
-            </div>
-            <div>
+    <form id="" action="/workouts" method="POST">
+        <% for (let i=0; i < 6; i++) { %>
+            <div id="workoutPlan">
+
                 <label><strong>Sets: </strong> </label>
-                <select name="sets">
+                <select name="sets<%= i %>">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -31,7 +27,7 @@
             </div>
             <div>
                 <label><strong>Reps: </strong> </label>
-                <select name="reps">
+                <select name="reps<%= i %>">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -56,7 +52,7 @@
                 </select>
             </div>
             <div>
-                <input type="text" name="weight" placeholder="lbs">
+                <input type="text" name="weight<%= i %>" placeholder="lbs">
             </div>
         </div>
         <% } %>

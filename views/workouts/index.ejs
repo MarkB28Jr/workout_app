@@ -16,15 +16,18 @@
     <td>
       <%= f.exercise %>
     </td>
+    
+    <% workout.exercise.forEach(function(e) { %>
     <td>
-      <%= f.sets %>
+      <%= e.sets %>
     </td>
     <td>
-      <%= f.reps %>
+      <%= e.reps %>
     </td>
     <td>
-      <%= f.weight %>
+      <%= e.weight %>
     </td>
+    <% }) %>
   </tr>
   <% }); %>
 

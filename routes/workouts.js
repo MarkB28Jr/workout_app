@@ -3,18 +3,16 @@ var router = express.Router();
 
 const workoutsCtrl = require('../controllers/workouts')
 
-
-// GET /history
-router.get('/history', workoutsCtrl.history);
+// GET /index
+router.get('/index', workoutsCtrl.index);
 // GET /workouts
 router.get('/workouts', workoutsCtrl.workouts);
 // GET /exercises
 router.get('/template', workoutsCtrl.exercises);
 // POST workout
 router.post('/', workoutsCtrl.create)
-
-
-// router.post('/', workoutsCtrl.createExercise)
+// POST /push exercises in by id
+router.post('/:id/workouts', workoutsCtrl.createExercise)
 
 // GET /profile
 // router.get('/profile', workoutsCtrl.profile);
