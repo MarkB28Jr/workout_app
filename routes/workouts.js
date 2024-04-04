@@ -17,6 +17,7 @@ router.get('/profile', workoutsCtrl.profile);
 
 // POST workout
 router.post('/', workoutsCtrl.create)
+// router.post('/', workoutsCtrl.createExercise)
 
 // POST exercise
 

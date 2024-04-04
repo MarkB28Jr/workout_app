@@ -29,33 +29,36 @@ const profile = async (req, res) => {
 }
 
 // CREATE EXERCISES IN Workout PAGE
-// const create = async (req, res) => {
+
+
+// async function create(req, res) {
 //     try {
-//         await Workout.create(req.body);
-//         res.redirect('/workouts/workouts')
+
+//         await Workout.exercises.create(req.body);
+//         // await workout.save();
+//         res.redirect('/workouts/workouts');
 //     } catch (err) {
-//         console.log(err)
-//         res.status(500).send('Failed to make Execise')
+//         console.log(err);
+//         // res.render('movies/new', { errorMsg: err.message });
 //     }
 // }
 
+
+
+
+
+
+
+
 const create = async (req, res) => {
     try {
-      // Check if req.body.exercises is defined
-
-      
-      // Map the exercises array to the desired format
-
-      const exercises = req.body.exercises
-      const workout = new Workout({ exercises });
-  
-      await workout.save();
-      res.redirect('/workouts/workouts')
+        await Workout.exercises.create(req.body);
+        res.redirect('/workouts/workouts')
     } catch (err) {
-      console.log(err)
-      res.status(500).send('Failed to make Workout')
+        console.log(err)
+        res.status(500).send('Failed to make Execise')
     }
-  }
+}
 
 // HISTORY OF PREVIOUS WORKOUTS
 
@@ -74,5 +77,6 @@ module.exports = {
     exercises,
     profile,
     create,
+    // createExercise,
 }
 // POST MVP CREATE MY OWN TYPE OF EXERCISES
