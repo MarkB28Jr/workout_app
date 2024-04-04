@@ -63,10 +63,13 @@ button {
   border: .15vmin solid black;
 }
 
-#workout {
+#workoutPlan {
   display: grid;
-  grid-template-columns: 200px repeat(4, 10fr);
+  grid-template-columns: 150px repeat(4, 10fr);
   padding-top: 1vmin;
+  position: center;
+  align-items: center;
+  justify-content: center;
 }
 
 #muscleList {
@@ -80,6 +83,18 @@ button {
 
 #templateWorkout {
   display: grid;
-  grid-template-columns: 200px repeat(4, 10fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   padding-top: 1vmin;
+}
+
+/* #workoutHead {
+  display: flex;
+  position: relative;
+} */
+
+#history {
+  width: 90vmin;
+  height: 75vmin;
+  padding: 5vmin;
 }

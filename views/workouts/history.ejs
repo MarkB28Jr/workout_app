@@ -1,8 +1,41 @@
 <%- include('../partials/header') %>
+<div id="workoutHead">
+    <tr>
+      <th>Muscle Group</th>&nbsp;|&nbsp;
+      <th>Exercise</th>&nbsp;|&nbsp;
+      <th>Sets</th>&nbsp;|&nbsp;
+      <th>Reps</th>&nbsp;|&nbsp;
+      <th>Weight</th>
+    </tr>
+</div>
+<div id="history">
 
-<label for="history"><strong>Select a Previous Workout</strong></label>
-<select name="history">
+
+<% workouts.forEach(function(f) { %>
+  <tr>
+    <td>
+      <%= f.exercise %>
+    </td>
+    <td>
+      <%= f.sets %>
+    </td>
+    <td>
+      <%= f.reps %>
+    </td>
+    <td>
+      <%= f.weight %>
+    </td>
+  </tr>
+  <% }); %>
 
 
 
+<!-- <div id="historyWorkouts">
+<label for="history"><strong>Select a Previous Workout</strong></label><br>
+<select name="history" id="history"> -->
+
+</select>
+</div>
+
+</div>
 <%- include('../partials/footer') %>
