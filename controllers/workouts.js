@@ -71,12 +71,6 @@ module.exports = {
 // POST MVP CREATE MY OWN TYPE OF EXERCISES
 
 
-    // DATE
-    // const now = new Date();
-    // Flight.arrivals = now;
-    // const dt = now;
-    // let departDefault = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
-    // departDefault += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
 
 
 // PROFILE PAGE IF I HAVE TIME OR AFTER MVP
