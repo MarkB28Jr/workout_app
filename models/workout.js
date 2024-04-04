@@ -66,33 +66,25 @@ const workoutSchema = new Schema({
   name: {
     type: String,
   },
-  exercises:[{
-    exercise1: {
-      type: String,
-    },
-
-    exercise2: {
-      type: String,
-    },
-
-    exercise3: {
-      type: String,
-    },
-
-    exercise4: {
-      type: String,
-    },
-
-    exercise5: {
-      type: String,
-    },
-
-    exercise6: {
-      type: String,
-    },
-  }],
-
-  exercise: [exerciseSchema]
+  exercise0: {
+    type: String,
+  },
+  exercise1: {
+    type: String,
+  },
+  exercise2: {
+    type: String,
+  },
+  exercise3: {
+    type: String,
+  },
+  exercise4: {
+    type: String,
+  },
+  exercise5: {
+    type: String,
+  },
+  exerciseData: [exerciseSchema]
 });
 
 module.exports = mongoose.model('Workout', workoutSchema)

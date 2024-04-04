@@ -1,22 +1,24 @@
 <%- include('../partials/header') %>
 
-<div id="muscleList">
-    <div>Exercise</div>
-</div>
+    <div id="muscleList">
+        <div>Exercise</div>
+    </div>
 
-<form id="addExercises" action="/workouts" method="POST">
-    <label for="exercisesName">Enter a Name for the Exercises:</label>
+    <form id="addExercises" action="/workouts" method="POST">
+        <label for="exercisesName">Enter a Name for the Exercises:</label>
 
-<input type="text" name="name" placeholder="Enter Name of Workout"><br>
-    <% for (let i=0; i < 6; i++) { %>
-        <div>
-            <label for="exerciseName">Enter a Exercise:</label>
-            <input type="text" name="exercise<%= i %>" placeholder="Enter Exercise">
-        </div>
-    <% } %>
+        <input type="text" name="name" placeholder="Enter Name of Workout"><br>
+        <% for (let i=0; i < 6; i++) { %>
+            <div>
+                <label for="exerciseName"><strong><%= i + 1 %>: Enter Exercise : </strong></label>
+                <input type="text" name="exercise<%= i %>" placeholder="Enter Exercise">
 
-<button name="submit">Submit</button>
-</form>
+            </div>
+            <br>
+            <% } %>
+
+                <button name="submit">Submit</button>
+    </form>
 
 
-    <%- include('../partials/footer') %> 
+    <%- include('../partials/footer') %>

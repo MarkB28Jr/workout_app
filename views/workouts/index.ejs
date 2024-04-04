@@ -10,32 +10,33 @@
 </div>
 <div id="history">
 
-
-<% workouts.forEach(function(f) { %>
-  <tr>
-    <td>
-      <%= f.exercise %>
+  <% workouts.forEach(function(f) { %>
+    <tr>
+      <td>
+        <%= f.name %>
+      </td>
+      <td>
+      <%= f.exercise0 %>
     </td>
-    
-    <% workout.exercise.forEach(function(e) { %>
-    <td>
-      <%= e.sets %>
+      <td>
+      <%= f.exercise1 %>
     </td>
-    <td>
-      <%= e.reps %>
+      <td>
+      <%= f.exercise2 %>
     </td>
-    <td>
-      <%= e.weight %>
+      <td>
+      <%= f.exercise3 %>
     </td>
-    <% }) %>
+      <td>
+      <%= f.exercise4 %>
+    </td>
+      <td>
+      <%= f.exercise5 %>
+    </td>
   </tr>
+  <br>
   <% }); %>
 
-
-
-<!-- <div id="historyWorkouts">
-<label for="history"><strong>Select a Previous Workout</strong></label><br>
-<select name="history" id="history"> -->
 
 </select>
 </div>
