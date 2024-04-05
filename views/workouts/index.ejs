@@ -1,45 +1,33 @@
 <%- include('../partials/header') %>
-<div id="workoutHead">
-    <tr>
-      <th>Muscle Group</th>&nbsp;|&nbsp;
-      <th>Exercise</th>&nbsp;|&nbsp;
-      <th>Sets</th>&nbsp;|&nbsp;
-      <th>Reps</th>&nbsp;|&nbsp;
-      <th>Weight</th>
-    </tr>
-</div>
-<div id="history">
 
-  <% workouts.forEach(function(f) { %>
-    <tr>
-      <td>
-        <%= f.name %>
-      </td>
-      <td>
-      <%= f.exercise0 %>
-    </td>
-      <td>
-      <%= f.exercise1 %>
-    </td>
-      <td>
-      <%= f.exercise2 %>
-    </td>
-      <td>
-      <%= f.exercise3 %>
-    </td>
-      <td>
-      <%= f.exercise4 %>
-    </td>
-      <td>
-      <%= f.exercise5 %>
-    </td>
-  </tr>
-  <br>
-  <% }); %>
+  <!-- <div id="container"> -->
 
+    <div id="history">
+      <% workouts.forEach(function(f) { %>
 
-</select>
-</div>
+        <div id="exercisesLists">
+          <strong>Name of Exercise:</strong> <%= f.name %>$$$
+        </div>
+          <strong>Exercise 1:</strong> <%= f.exercise0 %>
+            <div>
+              <strong>Exercise 2:</strong> <%= f.exercise1 %>
+            </div>
+            <div>
+              <strong>Exercise 3:</strong> <%= f.exercise2 %>
+            </div>
+            <div>
+              <strong>Exercise 4:</strong> <%= f.exercise3 %>
+            </div>
+            <div>
+              <strong>Exercise 5:</strong> <%= f.exercise4 %>
+            </div>
+            <div>
+              <strong>Exercise 6:</strong> <%= f.exercise5 %>
+            </div>
 
-</div>
-<%- include('../partials/footer') %>
+        <% }); %>
+    </div>
+
+  <!-- </div> -->
+
+  <%- include('../partials/footer') %>

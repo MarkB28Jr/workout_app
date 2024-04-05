@@ -5,11 +5,13 @@
         <div>Sets</div>
         <div>Reps</div>
         <div>Weight</div>
-    </div>
-    <form id="" action="/workouts" method="POST">
+    
+    <form id="exerciseData" action="/workouts" method="POST">
         <% for (let i=0; i < 6; i++) { %>
-            <div id="workoutPlan">
-
+            <!-- <div id="workoutPlan"> -->
+                <div>
+                    exercises
+                </div>
                 <label><strong>Sets: </strong> </label>
                 <select name="sets<%= i %>">
                     <option value="0">0</option>
@@ -53,9 +55,10 @@
             </div>
             <div>
                 <input type="text" name="weight<%= i %>" placeholder="lbs">
-            </div>
+            <!-- </div> -->
         </div>
         <% } %>
         <button name="submit">Submit</button>
 </form>
+</div>
 <%- include('../partials/footer') %>

@@ -5,9 +5,9 @@
     </div>
 
     <form id="addExercises" action="/workouts" method="POST">
-        <label for="exercisesName">Enter a Name for the Exercises:</label>
+        <label for="exercisesName"><strong> Enter a Name for the Exercises:</strong></label><br>
 
-        <input type="text" name="name" placeholder="Enter Name of Workout"><br>
+        <input type="text" name="name" placeholder="Enter Name of Workout"><br><br>
         <% for (let i=0; i < 6; i++) { %>
             <div>
                 <label for="exerciseName"><strong><%= i + 1 %>: Enter Exercise : </strong></label>
@@ -17,8 +17,8 @@
             <br>
             <% } %>
 
-                <button name="submit">Submit</button>
-    </form>
+        </form>
+        <button name="submit">Submit</button>
 
 
     <%- include('../partials/footer') %>

@@ -1,5 +1,4 @@
-body,
-nav {
+body{
   display: flex;
   flex-direction: column;
   position: center;
@@ -8,12 +7,14 @@ nav {
   text-align: center;
 }
 
-main {
+/* main {
   display: grid;
+  width: 100vh;
+  position:
   align-content: center;
   justify-content: center;
   margin: 20px;
-}
+} */
 
 nav {
   flex-direction: row;
@@ -52,14 +53,14 @@ tr {
 }
 
 button {
-  display: flex;
-  position: relative;
+
+  position: center;
   align-content: center;
   justify-content: center;
   align-items: center;
-  height: 3vmin;
+  height: 2vmin;
   width: 8vmin;
-  font-size: 2vmin;
+  font-size: 1.5vmin;
   border: .15vmin solid black;
 }
 
@@ -73,9 +74,18 @@ button {
 }
 
 #muscleList {
-  display: grid;
-  grid-template-columns: 200px repeat(4, 10fr);
-  padding-bottom: 1vmin;
+  display: flex;
+  justify-content: space-around;
+  padding: 1vmin;
+  border-bottom: .25vmin solid black;
+  background: grey;
+  color: white;
+}
+
+#exerciseData{
+  display: flex;
+  justify-content: space-around;
+  padding: 1vmin;
   border-bottom: .25vmin solid black;
   background: grey;
   color: white;
@@ -88,19 +98,44 @@ button {
   padding-top: 1vmin;
 }
 
-/* #workoutHead {
-  display: flex;
-  position: relative;
-} */
-
 #history {
-  width: 90vmin;
-  height: 75vmin;
-  padding: 5vmin;
+  display: flex;
+  position: center;
+  /* width: 100vmin; */
+  justify-content: start;
+  /* width: 50vmin;
+  height: 50vmin; */
 }
 
-#addExercises{
+#header{
+  background: rgb(255, 255, 255);
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  /* right: auto; */
+  position: center;
+  justify-content: center;
+  width: 100%;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  flex-direction: row;
+  color: rgb(0, 0, 0);
 }
+
+/* <!-- <div id="workoutHead">
+<tr>
+  <th>Exercise 1</th>&nbsp;|&nbsp;
+  <th>Exercise 2</th>&nbsp;|&nbsp;
+  <th>Exercise 3</th>&nbsp;|&nbsp;
+  <th>Exercise 4</th>&nbsp;|&nbsp;
+  <th>Exercise 5</th>&nbsp;|&nbsp;
+  <th>Exercise 6</th>&nbsp;|&nbsp;
+</tr>
+</div> -->
+
+<!-- <div id="workoutSide">
+  <tr>
+    <div>Name of Workout</div>
+    <div>Exercise</div>
+    <div>Sets</dvi>
+    <div>Reps</div>
+    <div>Weight</div>
+  </tr>
+</div> --> */
