@@ -3,6 +3,15 @@ const Schema = mongoose.Schema
 
 
 const exerciseSchema = new Schema({
+  sets0: {
+    type: Number,
+  },
+  reps0: {
+    type: Number,
+  },
+  weight0: {
+    type: Number
+  },
   sets1: {
     type: Number,
   },
@@ -46,15 +55,6 @@ const exerciseSchema = new Schema({
     type: Number,
   },
   weight5: {
-    type: Number
-  },
-  sets6: {
-    type: Number,
-  },
-  reps6: {
-    type: Number,
-  },
-  weight6: {
     type: Number
   }
 });

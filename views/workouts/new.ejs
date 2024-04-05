@@ -4,7 +4,7 @@
         <div>Exercise</div>
     </div>
 
-    <form id="addExercises" action="/workouts" method="POST">
+    <form id="addExercises" action="/workouts/new" method="POST">
         <label for="exercisesName"><strong> Enter a Name for the Exercises:</strong></label><br>
 
         <input type="text" name="name" placeholder="Enter Name of Workout"><br><br>
@@ -12,11 +12,9 @@
             <div>
                 <label for="exerciseName"><strong><%= i + 1 %>: Enter Exercise : </strong></label>
                 <input type="text" name="exercise<%= i %>" placeholder="Enter Exercise">
-
             </div>
             <br>
             <% } %>
-
             <button name="submit">Submit</button>
         </form>
 

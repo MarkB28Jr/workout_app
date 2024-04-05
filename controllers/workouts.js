@@ -17,11 +17,11 @@ const show = async (req, res) => {
     try {
         const workout = await Workout.findById(req.params.id).populate('exerciseData').exec();
         if (!workout) {
-            console.log("Workout not found")
+
             return res.status(404).send('Workout not found');
         }
-        const exerciseData = workout.exerciseData;
-        res.render('workouts/show', { title: 'Workout Details', workout, exerciseData });
+        const exercise = workout.exerciseData;
+        res.render('workouts/show', { title: 'Workout Details', workout, exercise});
     } catch (err) {
         console.error('Error finding workout or exercise:', err);
         res.status(500).send('Internal Server Error');
@@ -30,8 +30,8 @@ const show = async (req, res) => {
 
 // NEW EXERCISES BY PUSHING
 const newExercise = async (req, res) => {
-    const newExercise = new Workout();
-    res.render('workouts/new', { title: 'Create the Workout You want to do', newExercise })
+    const workout = new Workout();
+    res.render('workouts/new', { title: 'Create the Workout You want to do', workout })
 }
 
 // CREATE EXERCISES IN Template PAGE
@@ -53,9 +53,21 @@ const createExercise = async (req, res) => {
     } catch (err) {
         console.log(err)
     }
-    res.redirect(`workouts/${workout._id}`)
+    res.redirect('/workouts/new')
 }
 
+const deleteWorkout = async (req, res) => {
+    try {
+           const workout = await Workout.findByIdAndDelete(req.params.id)
+    // .populate('exerciseData').exec();
+    if (!workout) {
+        res.status(404).send('Workout not Found')
+    }
+
+    } catch (err) {
+        res.status(500).send('Server Error')
+    }
+}
 
 
 
@@ -72,7 +84,8 @@ module.exports = {
     show,
     new: newExercise,
     create,
-    createExercise
+    createExercise,
+    deleteWorkout
 }
 // POST MVP CREATE MY OWN TYPE OF EXERCISES
 

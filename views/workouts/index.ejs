@@ -4,7 +4,6 @@
 
     <div id="history">
       <% workouts.forEach(function(f) { %>
-
         <div>
           <strong>Name of Exercise:</strong> <%= f.name %>$$$
         </div>
@@ -27,6 +26,11 @@
           <strong>Exercise 6:</strong> <%= f.exercise5 %>
         </div>
         <div><a href="/workouts/<%= f._id %>">DETAILS</a></div>
+
+        <form action="/workouts/<%= f._id %>" method="POST">
+          <input type="hidden" >
+          <button type="submit" name="_method" value="delete">Delete</button>
+        </form>
 
         <% }); %>
     </div>

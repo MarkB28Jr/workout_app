@@ -2,12 +2,12 @@
 
 
     <div><strong>Name: </strong>
-        <%= workut.name %>
+        <%= workout.name %>
     </div>
     <form id="exerciseData" action="/workouts/<%= workout._id %>/details" method="POST">
         <% for (let i=0; i < 6; i++) { %>
                 <div>
-                    <%= workut.exercise %><%= i %>
+                    <label"><strong>Exercise: <%= workout['exercise' + i  ] %></strong> </label>
                 </div>
                 <label><strong>Sets: </strong> </label>
                 <select name="sets<%= i %>">
@@ -56,7 +56,8 @@
             </div>
     </div>
         <% } %>
-        <button name="submit">Submit</button>
+        <input type="submit" name="Add Exercise Data" id="">
+        <!-- <button name="submit">Submit</button> -->
 </form>
 
 <%- include('../partials/footer') %>
