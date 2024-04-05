@@ -7,7 +7,7 @@
     <form id="exerciseData" action="/workouts/<%= workout._id %>/details" method="POST">
         <% for (let i=0; i < 6; i++) { %>
                 <div>
-                    <label"><strong>Exercise: <%= workout['exercise' + i  ] %></strong> </label>
+                    <label"><strong>Exercise: <%= workout['exercise' + i ] %></strong> </label>
                 </div>
                 <label><strong>Sets: </strong> </label>
                 <select name="sets<%= i %>">

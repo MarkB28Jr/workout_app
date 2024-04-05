@@ -1,40 +1,28 @@
 <%- include('../partials/header') %>
 
-  <!-- <div id="container"> -->
 
-    <div id="history">
-      <% workouts.forEach(function(f) { %>
-        <div>
-          <strong>Name of Exercise:</strong> <%= f.name %>$$$
-        </div>
-        <div>
-          <strong>Exercise 1:</strong> <%= f.exercise0 %>
-        </div>
-        <div>
-          <strong>Exercise 2:</strong> <%= f.exercise1 %>
-        </div>
-        <div>
-          <strong>Exercise 3:</strong> <%= f.exercise2 %>
-        </div>
-        <div>
-          <strong>Exercise 4:</strong> <%= f.exercise3 %>
-        </div>
-        <div>
-          <strong>Exercise 5:</strong> <%= f.exercise4 %>
-        </div>
-        <div>
-          <strong>Exercise 6:</strong> <%= f.exercise5 %>
-        </div>
-        <div><a href="/workouts/<%= f._id %>">DETAILS</a></div>
+  <div id="history">
+    <% workouts.forEach(function(f) { %>
+      <div>
+        <strong>Name of Exercise:</strong>
+        <%= f.name %>
+      </div>
+      <div>
+        <% for (let i=0; i < 6; i++) { %>
+          <strong>Exercise <%= i + 1 %>:</strong>
+          <%= f['exercise' + i ] %>
+            <% }; %>
+      </div>
+      <div><a href="/workouts/<%= f._id %>">DETAILS</a></div>
 
-        <form action="/workouts/<%= f._id %>" method="POST">
-          <input type="hidden" >
-          <button type="submit" name="_method" value="delete">Delete</button>
-        </form>
+      <!-- <form action="/workouts/<%= f._id %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" >Delete</button>
+      </form> -->
+      <% }); %>
 
-        <% }); %>
-    </div>
+  </div>
 
-  <!-- </div> -->
 
-  <%- include('../partials/footer') %>
+
+    <%- include('../partials/footer') %>
