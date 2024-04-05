@@ -1,16 +1,13 @@
 <%- include('../partials/header') %>
 
-    <div id="muscleList">
-        <div>Exercise</div>
-        <div>Sets</div>
-        <div>Reps</div>
-        <div>Weight</div>
-    
-    <form id="exerciseData" action="/workouts" method="POST">
+
+    <div><strong>Name: </strong>
+        <%= workut.name %>
+    </div>
+    <form id="exerciseData" action="/workouts/<%= workout._id %>/details" method="POST">
         <% for (let i=0; i < 6; i++) { %>
-            <!-- <div id="workoutPlan"> -->
                 <div>
-                    exercises
+                    <%= workut.exercise %><%= i %>
                 </div>
                 <label><strong>Sets: </strong> </label>
                 <select name="sets<%= i %>">
@@ -27,6 +24,7 @@
                     <option value="10">10</option>
                 </select>
             </div>
+
             <div>
                 <label><strong>Reps: </strong> </label>
                 <select name="reps<%= i %>">
@@ -55,10 +53,10 @@
             </div>
             <div>
                 <input type="text" name="weight<%= i %>" placeholder="lbs">
-            <!-- </div> -->
-        </div>
+            </div>
+    </div>
         <% } %>
         <button name="submit">Submit</button>
 </form>
-</div>
+
 <%- include('../partials/footer') %>

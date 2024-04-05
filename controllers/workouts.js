@@ -14,18 +14,25 @@ const index = async (req, res) => {
 
 // Show Page
 const show = async (req, res) => {
-    res.render('workouts/show', { title: 'Enter Exercise  Data for Workouts' })
+    try {
+        const workout = await Workout.findById(req.params.id).populate('exerciseData').exec();
+        if (!workout) {
+            console.log("Workout not found")
+            return res.status(404).send('Workout not found');
+        }
+        const exerciseData = workout.exerciseData;
+        res.render('workouts/show', { title: 'Workout Details', workout, exerciseData });
+    } catch (err) {
+        console.error('Error finding workout or exercise:', err);
+        res.status(500).send('Internal Server Error');
+    }
 }
 
 // NEW EXERCISES BY PUSHING
 const newExercise = async (req, res) => {
     const newExercise = new Workout();
-    res.render('workouts/new', { title: 'Create the Workout You want to do' })
+    res.render('workouts/new', { title: 'Create the Workout You want to do', newExercise })
 }
-
-
-
-
 
 // CREATE EXERCISES IN Template PAGE
 const create = async (req, res) => {
@@ -39,15 +46,14 @@ const create = async (req, res) => {
 }
 
 const createExercise = async (req, res) => {
-    const flight = await Flight.findById(req.params.id);
-    flight.destinations.push(req.body)
-
+    const workout = await Workout.findById(req.params.id);
+    workout.exerciseData.push(req.body)
     try {
-        await flight.save()
+        await workout.save()
     } catch (err) {
         console.log(err)
     }
-    res.redirect(`/flights/${flight._id}`)
+    res.redirect(`workouts/${workout._id}`)
 }
 
 

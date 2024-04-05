@@ -7,14 +7,12 @@ body{
   text-align: center;
 }
 
-/* main {
+main {
   display: grid;
-  width: 100vh;
-  position:
   align-content: center;
   justify-content: center;
   margin: 20px;
-} */
+}
 
 nav {
   flex-direction: row;
@@ -73,22 +71,8 @@ button {
   justify-content: center;
 }
 
-#muscleList {
-  display: flex;
-  justify-content: space-around;
-  padding: 1vmin;
-  border-bottom: .25vmin solid black;
-  background: grey;
-  color: white;
-}
-
 #exerciseData{
-  display: flex;
-  justify-content: space-around;
   padding: 1vmin;
-  border-bottom: .25vmin solid black;
-  background: grey;
-  color: white;
 }
 
 #templateWorkout {
@@ -98,13 +82,17 @@ button {
   padding-top: 1vmin;
 }
 
-#history {
+/* #history {
   display: flex;
+  flex-wrap: wrap;
   position: center;
-  /* width: 100vmin; */
+  width: 100vh;
   justify-content: start;
-  /* width: 50vmin;
-  height: 50vmin; */
+} */
+
+#history>div {
+width: 15vmin;
+justify-content: space-around;
 }
 
 #header{

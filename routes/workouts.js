@@ -12,7 +12,9 @@ router.get('/new', workoutsCtrl.new);
 // POST workout
 router.post('/', workoutsCtrl.create)
 // POST /push exercises in by id
-router.post('/:id/workouts', workoutsCtrl.createExercise)
+// router.post('/:id', workoutsCtrl.createExercise)
+// POST /push exercises in by id
+router.post('/:id/details', workoutsCtrl.createExercise)
 
 // GET /profile
 // router.get('/profile', workoutsCtrl.profile);

@@ -3,9 +3,6 @@ const Schema = mongoose.Schema
 
 
 const exerciseSchema = new Schema({
-  date: {
-    type: Date
-  },
   sets1: {
     type: Number,
   },

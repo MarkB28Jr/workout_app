@@ -5,25 +5,28 @@
     <div id="history">
       <% workouts.forEach(function(f) { %>
 
-        <div id="exercisesLists">
+        <div>
           <strong>Name of Exercise:</strong> <%= f.name %>$$$
         </div>
+        <div>
           <strong>Exercise 1:</strong> <%= f.exercise0 %>
-            <div>
-              <strong>Exercise 2:</strong> <%= f.exercise1 %>
-            </div>
-            <div>
-              <strong>Exercise 3:</strong> <%= f.exercise2 %>
-            </div>
-            <div>
-              <strong>Exercise 4:</strong> <%= f.exercise3 %>
-            </div>
-            <div>
-              <strong>Exercise 5:</strong> <%= f.exercise4 %>
-            </div>
-            <div>
-              <strong>Exercise 6:</strong> <%= f.exercise5 %>
-            </div>
+        </div>
+        <div>
+          <strong>Exercise 2:</strong> <%= f.exercise1 %>
+        </div>
+        <div>
+          <strong>Exercise 3:</strong> <%= f.exercise2 %>
+        </div>
+        <div>
+          <strong>Exercise 4:</strong> <%= f.exercise3 %>
+        </div>
+        <div>
+          <strong>Exercise 5:</strong> <%= f.exercise4 %>
+        </div>
+        <div>
+          <strong>Exercise 6:</strong> <%= f.exercise5 %>
+        </div>
+        <div><a href="/workouts/<%= f._id %>">DETAILS</a></div>
 
         <% }); %>
     </div>
