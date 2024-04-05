@@ -1,4 +1,8 @@
-body{
+hr{
+  border: 5px solid rgb(0, 195, 255);
+}
+
+body {
   display: flex;
   flex-direction: column;
   position: center;
@@ -8,7 +12,8 @@ body{
 }
 
 main {
-  display: grid;
+  display: inline block;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   margin: 20px;
@@ -30,6 +35,23 @@ tr {
   height: 3vmin;
 }
 
+h1{
+  background-color: black;
+  color: azure;
+}
+
+#header {
+  background: rgb(255, 255, 255);
+  margin: 0 auto;
+  display: flex;
+  position: center;
+  justify-content: center;
+  width: 100%;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  flex-direction: row;
+  color: rgb(0, 0, 0);
+}
+
 .login {
   display: flex;
   justify-content: center;
@@ -41,7 +63,7 @@ tr {
   height: 30px;
 }
 
-#submit {
+/* #submit {
   display: flex;
   position: relative;
   align-content: center;
@@ -70,43 +92,29 @@ button {
   align-items: center;
   justify-content: center;
 }
-
-#exerciseData{
+*/
+/* #exerciseData{
   padding: 1vmin;
-}
-
+  font-size: 1.5vmin;
+  display: grid;
+  justify-items: start;
+} */
+/*
 #templateWorkout {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(8, 1fr);
   padding-top: 1vmin;
-}
-
-/* #history {
-  display: flex;
-  flex-wrap: wrap;
-  position: center;
-  width: 100vh;
-  justify-content: start;
 } */
 
-#history>div {
-width: 15vmin;
-justify-content: space-around;
-}
-
-#header{
-  background: rgb(255, 255, 255);
-  margin: 0 auto;
+#history {
   display: flex;
-  position: center;
-  justify-content: center;
-  width: 100%;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  flex-direction: row;
-  color: rgb(0, 0, 0);
+  font-size: 50vmin;
 }
 
+hr{
+  color: black;
+}
 /* <!-- <div id="workoutHead">
 <tr>
   <th>Exercise 1</th>&nbsp;|&nbsp;

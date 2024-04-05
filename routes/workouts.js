@@ -14,7 +14,7 @@ router.post('/', workoutsCtrl.create)
 // POST /push exercises in by id
 router.post('/:id/details', workoutsCtrl.createExercise)
 // DELETE
-router.delete('/workouts/:id', workoutsCtrl.deleteWorkout)
+router.delete('/:id', workoutsCtrl.delete)
 // GET /profile
 // router.get('/profile', workoutsCtrl.profile);
 

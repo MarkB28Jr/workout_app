@@ -1,28 +1,20 @@
 <%- include('../partials/header') %>
 
-
-  <div id="history">
-    <% workouts.forEach(function(f) { %>
-      <div>
-        <strong>Name of Exercise:</strong>
-        <%= f.name %>
-      </div>
-      <div>
+  <% workouts.forEach(function(f) { %>
+    <table id="history">
+      <strong>Name of Exercise:</strong>
+      <%= f.name %>
+        <hr>
         <% for (let i=0; i < 6; i++) { %>
           <strong>Exercise <%= i + 1 %>:</strong>
           <%= f['exercise' + i ] %>
             <% }; %>
-      </div>
-      <div><a href="/workouts/<%= f._id %>">DETAILS</a></div>
+              <a href="/workouts/<%= f._id %>">DETAILS</a>
+              <form action="/workouts/<%= f._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+              </form>
+    </table>
+    <hr>
+    <% }); %>
 
-      <!-- <form action="/workouts/<%= f._id %>" method="POST">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit" >Delete</button>
-      </form> -->
-      <% }); %>
-
-  </div>
-
-
-
-    <%- include('../partials/footer') %>
+      <%- include('../partials/footer') %>

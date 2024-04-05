@@ -1,28 +1,28 @@
 <%- include('../partials/header') %>
 
-
-    <div><strong>Name: </strong>
-        <%= workout.name %>
-    </div>
     <form id="exerciseData" action="/workouts/<%= workout._id %>/details" method="POST">
+        <div><strong>Name: </strong>
+            <%= workout.name %>
+        </div>
+        <hr>
         <% for (let i=0; i < 6; i++) { %>
-                <div>
-                    <label"><strong>Exercise: <%= workout['exercise' + i ] %></strong> </label>
-                </div>
-                <label><strong>Sets: </strong> </label>
-                <select name="sets<%= i %>">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <div>
+                <label"><strong>Exercise: <%= workout['exercise' + i ] %></strong> </label>
+            </div>
+            <label><strong>Sets: </strong> </label>
+            <select name="sets<%= i %>">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
             </div>
 
             <div>
@@ -31,7 +31,7 @@
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
-                     <option value="3">3</option>
+                    <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                     <option value="6">6</option>
@@ -51,13 +51,13 @@
                     <option value="20">20</option>
                 </select>
             </div>
-            <div>
-                <input type="text" name="weight<%= i %>" placeholder="lbs">
-            </div>
-    </div>
-        <% } %>
-        <input type="submit" name="Add Exercise Data" id="">
-        <!-- <button name="submit">Submit</button> -->
-</form>
 
-<%- include('../partials/footer') %>
+            <input type="text" name="weight<%= i %>" placeholder="lbs">
+
+            </div>
+            <input type="submit" name="Add Exercise Data" id="">
+    </form>
+    <hr>
+    <% } %>
+
+        <%- include('../partials/footer') %>

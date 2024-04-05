@@ -32,7 +32,6 @@ const show = async (req, res) => {
     }
 }
 
-
 // CREATE EXERCISES IN Template PAGE
 const create = async (req, res) => {
     try {
@@ -55,17 +54,30 @@ const createExercise = async (req, res) => {
     res.redirect(`/workouts/${workout._id}`)
 }
 
-const deleteWorkout = async (req, res) => {
-    try {
-           const workout = await Workout.findByIdAndDelete(req.params.id).populate('exerciseData').exec();
-    if (!workout) {
-        res.status(404).send('Workout not Found')
-    }
+// const deleteWorkout = async (req, res) => {
+//     try {
+//         const workout = await Workout.findByIdAndDelete(req.params.id);
+//         if (!workout) {
+//             res.status(404).send('Workout not Found')
+//         }
+//         workout.remove(req.params.id);
+//         await workout.save();
+//         res.render('workouts/index')
+//     } catch (err) {
+//         res.status(500).send('Server Error')
+//     }
+// }
 
-    } catch (err) {
-        res.status(500).send('Server Error')
+const deleteWorkout = async (req, res) => {
+    const workout = req.params.id;
+    try {
+      await Workout.findByIdAndDelete(workout);
+      res.status(204).redirect('/')
+    } catch (error) {
+      console.error('Error deleting Workout:', error);
+      res.status(500).json({ error: 'Unable to delete Workout' });
     }
-}
+  };
 
 
 module.exports = {
@@ -74,5 +86,5 @@ module.exports = {
     new: newExercise,
     create,
     createExercise,
-    deleteWorkout
+    delete: deleteWorkout
 }
