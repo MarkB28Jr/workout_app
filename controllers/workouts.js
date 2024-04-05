@@ -52,7 +52,7 @@ const createExercise = async (req, res) => {
     } catch (err) {
         console.log(err)
     }
-    res.redirect('/workouts/new')
+    res.redirect(`/workouts/${workout._id}`)
 }
 
 const deleteWorkout = async (req, res) => {
