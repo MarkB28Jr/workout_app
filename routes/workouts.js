@@ -6,7 +6,7 @@ const workoutsCtrl = require('../controllers/workouts')
 // GET /index
 router.get('/index', workoutsCtrl.index);
 // GET /workouts
-router.get('/:id', workoutsCtrl.show);
+router.get('/workouts/:id', workoutsCtrl.show);
 // GET /exercises
 router.get('/new', workoutsCtrl.new);
 // POST workout

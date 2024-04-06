@@ -14,8 +14,13 @@ const index = async (req, res) => {
 
 // NEW EXERCISES
 const newExercise = (req, res) => {
-    const workout = new Workout();
-    res.render('workouts/new', { title: 'Create the Workout You want to do', workout })
+    try {
+        const workout = new Workout();
+        res.render('workouts/new', { title: 'Create Your Workout', workout })
+    }catch (err){
+        console.log(err)
+        res.status(500).send('Error Creating Your Workout')
+    }
 }
 
 // Show
@@ -25,7 +30,7 @@ const show = async (req, res) => {
         if (!workout) {
             return res.status(404).send('Workout not found');
         }
-        res.render('workouts/show', { title: 'Workout Details', workout, });
+        res.render('workouts/show', { title: 'Workout Details', workout });
     } catch (err) {
         console.error('Error finding workout or exercise:', err);
         res.status(500).send('Internal Server Error');
@@ -35,8 +40,8 @@ const show = async (req, res) => {
 // CREATE EXERCISES IN Template PAGE
 const create = async (req, res) => {
     try {
-        await Workout.create(req.body);
-        res.redirect('/workouts/new')
+        const workout = await Workout.create(req.body);
+        res.render('workouts/new', { title: 'Create Your Workout', workout})
     } catch (err) {
         console.log(err)
         res.status(500).send('Failed to make Execise')
@@ -54,24 +59,11 @@ const createExercise = async (req, res) => {
     res.redirect(`/workouts/${workout._id}`)
 }
 
-// const deleteWorkout = async (req, res) => {
-//     try {
-//         const workout = await Workout.findByIdAndDelete(req.params.id);
-//         if (!workout) {
-//             res.status(404).send('Workout not Found')
-//         }
-//         workout.remove(req.params.id);
-//         await workout.save();
-//         res.render('workouts/index')
-//     } catch (err) {
-//         res.status(500).send('Server Error')
-//     }
-// }
-
 const deleteWorkout = async (req, res) => {
     const workout = req.params.id;
     try {
       await Workout.findByIdAndDelete(workout);
+      res.render('workouts/index')
       res.status(204).redirect('/')
     } catch (error) {
       console.error('Error deleting Workout:', error);

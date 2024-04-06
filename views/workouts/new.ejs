@@ -1,16 +1,16 @@
 <%- include('../partials/header') %>
 
-    <div id="muscleList">
+    <!-- <div id="muscleList">
         <div>Exercise</div>
-    </div>
+    </div> -->
 
-    <form id="addExercises" action="/workouts/new" method="POST">
-        <label for="exercisesName"><strong> Enter a Name for the Exercises:</strong></label><br>
+    <form id="addExercises" action="/workouts" method="POST">
+        <label for="exercisesName"><strong> Enter a Name Workout:</strong></label><br>
 
         <input type="text" name="name" placeholder="Enter Name of Workout"><br><br>
         <% for (let i=0; i < 6; i++) { %>
             <div>
-                <label for="exerciseName"><strong><%= i %>: Enter Exercise : </strong></label>
+                <label for="exerciseName"><strong><%= [i + 1] %>: Enter Exercise : </strong></label>
                 <input type="text" name="exercise<%= i %>" placeholder="Enter Exercise">
             </div>
             <br>

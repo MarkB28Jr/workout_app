@@ -1,7 +1,3 @@
-hr{
-  border: 5px solid rgb(0, 195, 255);
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -31,9 +27,9 @@ a {
   color: #0051ff;
 }
 
-tr {
+/* tr {
   height: 3vmin;
-}
+} */
 
 h1{
   background-color: black;
@@ -61,6 +57,26 @@ h1{
 
 .login img {
   height: 30px;
+}
+
+#deleteBtn{
+  margin: 10px;
+  color: red;
+  border: 1px solid black;
+  border-radius: 25%;
+}
+
+#detailsLink{
+  margin: 10px;
+}
+
+#history {
+  display: flex;
+  /* font-size: 50vmin; */
+}
+
+hr{
+  color: rgb(255, 0, 0);
 }
 
 /* #submit {
@@ -107,14 +123,7 @@ button {
   padding-top: 1vmin;
 } */
 
-#history {
-  display: flex;
-  font-size: 50vmin;
-}
 
-hr{
-  color: black;
-}
 /* <!-- <div id="workoutHead">
 <tr>
   <th>Exercise 1</th>&nbsp;|&nbsp;
