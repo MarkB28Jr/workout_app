@@ -85,6 +85,14 @@ const workoutSchema = new Schema({
 });
 
 
+
+
+
+module.exports = mongoose.model('Workout', workoutSchema)
+
+
+// IGNORE below please this is code I am working with to see if I can make the Schema into a array of objects so I dont have to have everything spelled out and so long // I also want to make it so the user can change how many exercises they want by have a button to click to add another exercise.
+
 // const workoutSchema = new Schema({
 //   exercises: [
 //     {
@@ -108,7 +116,6 @@ const workoutSchema = new Schema({
 //   ],
 // });
 
-
 // const exerciseSchema = new mongoose.Schema({
 //   muscleGroup: {
 //     type: String,
@@ -120,12 +127,6 @@ const workoutSchema = new Schema({
 //   }]
 // });
 
-
-
-module.exports = mongoose.model('Workout', workoutSchema)
-
-
-
 {/* <ul>
 <% workout.exercises.forEach(exercise => { %>
   <li>
@@ -135,16 +136,12 @@ module.exports = mongoose.model('Workout', workoutSchema)
 <% }); %>
 </ul> */}
 
-
-
-
 {/* <h1>Calves Exercises</h1>
 <ul>
   <% exercises.forEach(function(exercise) { %>
     <li><%= exercise.exercises.join(', ') %></li>
   <% }); %>
 </ul> */}
-
 
 //   // Find all exercises for the Calves muscle group
 //   Exercise.find({ muscleGroup: 'Calves' }, function (err, exercises) {

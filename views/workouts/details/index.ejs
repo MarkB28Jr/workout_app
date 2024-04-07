@@ -6,6 +6,9 @@
                             </div>
                             <hr>
                             <% for (let i=0; i < 6; i++) { %>
+                                <!-- <%= workout.sets %>
+                                <%= workout.reps %>
+                                <%= workout.weight %> -->
                                 <div>
                                     <label"><strong>Exercise: <%= workout['exercise' + i ] %></strong> </label>
                                 </div>
@@ -55,7 +58,7 @@
                                     <input type="text" name="weight<%= i %>" placeholder="lbs">
                                 </div>
                                 <div>
-                                    <input type="submit" name="Add Exercise Data" id="">
+                                    <input type="submit" name="Add Exercise Info" id="">
                                 </div>
                         </form>
 
