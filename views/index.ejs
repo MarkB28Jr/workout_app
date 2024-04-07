@@ -1,3 +1,28 @@
 <%- include('./partials/header') %>
 
-<%- include('./partials/footer') %>
+    <h2>Build you own Workout</h2>
+
+    <p>
+        This App will alow you to build a workout that you want to do! There is a page to <a href="/workouts/new" <%-
+            title==='CREATE' ? 'class="active"' : '' %>>CREATE</a> a workout with 6 exercises. Once you create a workout
+        you can view all of them in the <a href="/workouts/index" <%- title==='HISTORY' ? 'class="active"' : ''
+            %>>WORKOUT</a> tab.
+    </p>
+
+    <p>
+        Once you go to the workout tab you will see a list of workouts you have created. The yellow WORKOUT link will
+        take you to a page. Inside that page you can add how many set, reps, and weight you did during your workout.
+        Each workout can also be delete if you now longer want it.
+    </p>
+
+    <p>
+        In the futture, instead of inputing the exercise manually there will be a drop down menu that you can select a
+        muscle group and that will populate another drop down menu that you can then select a exercise from that muscle
+        group.
+    </p>
+
+    <p>
+        There will also be a page that will allow you to also create a exercise if it is not in the exercises of the muscle group you chose, and have it populate the muscle group data of exercises.
+    </p>
+
+    <%- include('./partials/footer') %>

@@ -11,11 +11,12 @@
         </title>
     </head>
 
-    <body>
+    <body id="full-page">
+
         <nav id="header">
             <% if (user) { %>
             <a href="/" <%- title==='HOME' ? 'class="active"' : '' %>>HOME</a>&nbsp;|&nbsp;
-            <a href="/workouts/index" <%- title==='HISTORY' ? 'class="active"' : '' %>>HISTORY</a>&nbsp;|&nbsp;
+            <a href="/workouts/index" <%- title==='HISTORY' ? 'class="active"' : '' %>>WORKOUT</a>&nbsp;|&nbsp;
             <a href="/workouts/new" <%- title==='CREATE' ? 'class="active"' : '' %>>CREATE</a>&nbsp;|&nbsp;
             <a href="/logout">LOG OUT</a>
             <% } else { %>

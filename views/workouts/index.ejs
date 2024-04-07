@@ -2,31 +2,27 @@
 
   <% workouts.forEach(function(f) { %>
     <table id="history">
-      <thead>
-      <tr>
-        <th>
-          <strong>Name of Workout:</strong>
-          <%= f.name %>&nbsp;|&nbsp;
-        </th>
-      </tr>
-      </thead>
-       <tbody>
+      <tbody>
         <tr>
-        <% for (let i=0; i < 6; i++) { %>
           <td>
-            <strong>Exercise <%= i + 1 %>:</strong>
-            <%= f['exercise' + i ] %>&nbsp;|&nbsp;
+            <strong>Name of Workout:</strong>
+            <%= f.name %>&nbsp;|&nbsp;
           </td>
-          <% }; %>
+          <% for (let i=0; i < 6; i++) { %>
             <td>
-              <a href="/workouts/<%= f._id %>" id="detailsLink">DETAILS</a>
+              <strong>Exercise <%= i + 1 %>:</strong>
+              <%= f['exercise' + i ] %>&nbsp;|&nbsp;
             </td>
-            <td>
-              <form action="/workouts/<%= f._id %>?_method=DELETE" method="POST">
-                <button type="submit" id="deleteBtn"> X </button>
-              </form>
-            </td>
-      </tr>
+            <% }; %>
+              <td>
+                <a href="/workouts/<%= f._id %>" id="detailsLink">WORKOUT</a>
+              </td>
+              <td>
+                <form action="/workouts/<%= f._id %>?_method=DELETE" method="POST">
+                  <button type="submit" id="deleteBtn"> X </button>
+                </form>
+              </td>
+        </tr>
       </tbody>
     </table>
     <hr>

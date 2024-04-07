@@ -51,13 +51,15 @@
                     <option value="20">20</option>
                 </select>
             </div>
-
-            <input type="text" name="weight<%= i %>" placeholder="lbs">
-
+            <div>
+                <input type="text" name="weight<%= i %>" placeholder="lbs">
             </div>
-            <input type="submit" name="Add Exercise Data" id="">
+            <div>
+                <input type="submit" name="Add Exercise Data" id="">
+            </div>
     </form>
     <hr>
     <% } %>
-
+    <a href="/workouts/<%= workout._id %>">Back to Workouts</a>
+    
         <%- include('../partials/footer') %>

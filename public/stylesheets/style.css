@@ -1,3 +1,23 @@
+*{
+  /* background: linear-gradient(rgb(206, 105, 105), #000000, white); */
+  background-repeat: no-repeat;
+  background-position: 0%;
+  /* height:100vh; */
+  /* background-image: radial-gradient(rgb(204, 201, 201) 5%, rgb(86, 86, 86) 15%, rgb(25, 25, 25) 60%) */
+}
+
+#full-page{
+  background-image: radial-gradient(rgb(204, 201, 201) 5%, rgb(104, 104, 104) 15%, rgb(31, 31, 31) 60%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: azure;
+}
+
+#detailsLink{
+  color: gold;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -26,10 +46,6 @@ nav {
 a {
   color: #0051ff;
 }
-
-/* tr {
-  height: 3vmin;
-} */
 
 h1{
   background-color: black;

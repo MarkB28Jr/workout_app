@@ -15,6 +15,8 @@ router.post('/', workoutsCtrl.create)
 router.post('/:id/details', workoutsCtrl.createExercise)
 // DELETE
 router.delete('/:id', workoutsCtrl.delete)
+// GET Workout Details page
+router.get('/:id/details', workoutsCtrl.viewWorkout);
 // GET /profile
 // router.get('/profile', workoutsCtrl.profile);
 
