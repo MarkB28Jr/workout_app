@@ -4,10 +4,14 @@
   color: white;
 }
 
-#links, #detailsLink, a, h1, h2, label, select, table{
+#links, #detailsLink, a, h1, h2, select, table{
   color: gold;
   margin: 5px;
   font-size: 1.5vmin;
+}
+
+label{
+  font-size: 1.25vmin;
 }
 
 body {
