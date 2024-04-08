@@ -10,8 +10,8 @@
   font-size: 1.5vmin;
 }
 
-label{
-  font-size: 1.25vmin;
+label, p{
+  font-size: 1.5vmin;
 }
 
 body {
