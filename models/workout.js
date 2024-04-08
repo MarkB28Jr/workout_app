@@ -115,38 +115,3 @@ module.exports = mongoose.model('Workout', workoutSchema)
 //     },
 //   ],
 // });
-
-// const exerciseSchema = new mongoose.Schema({
-//   muscleGroup: {
-//     type: String,
-//     enum: ['Calves'],
-//     unique: true
-//   },
-//   exercises: [{
-//     type: String,
-//   }]
-// });
-
-{/* <ul>
-<% workout.exercises.forEach(exercise => { %>
-  <li>
-    <h2><%= exercise.name %></h2>
-    <p>Muscle Group: <%= exercise.muscleGroup %></p>
-  </li>
-<% }); %>
-</ul> */}
-
-{/* <h1>Calves Exercises</h1>
-<ul>
-  <% exercises.forEach(function(exercise) { %>
-    <li><%= exercise.exercises.join(', ') %></li>
-  <% }); %>
-</ul> */}
-
-//   // Find all exercises for the Calves muscle group
-//   Exercise.find({ muscleGroup: 'Calves' }, function (err, exercises) {
-//     if (err) return handleError(err);
-//     // Render the EJS template and pass the exercises as a variable
-//     res.render('calves', { exercises: exercises });
-//   });
-// });
