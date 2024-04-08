@@ -15,7 +15,10 @@
             </td>
             <% }; %>
               <td>
-                <a href="/workouts/<%= f._id %>" id="detailsLink">WORKOUT</a>
+                <a href="/workouts/<%= f._id %>" id="detailsLink">WORKOUT</a>&nbsp;|&nbsp;
+              </td>
+              <td>
+                <a href="/workouts/<%= f._id %>/details" id="detailsLink">DETAILS</a>
               </td>
               <td>
                 <form action="/workouts/<%= f._id %>?_method=DELETE" method="POST">
@@ -29,3 +32,7 @@
     <% }); %>
 
       <%- include('../partials/footer') %>
+
+
+
+

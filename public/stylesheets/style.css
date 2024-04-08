@@ -1,11 +1,12 @@
 *{
-  background-image: radial-gradient(rgb(200, 200, 200) 5%, rgb(150, 150, 150) 15%, rgb(100, 100, 100) 40%, rgb(50, 50, 50) 60%, rgb(0, 0, 0)150%) ;
+  background-image: linear-gradient(rgb(0, 0, 0) 100%, rgba(176, 176, 176, 0.667) 50%) ;
   background-attachment: fixed;
   color: white;
 }
 
 #links, #detailsLink, a, h1, h2{
   color: gold;
+  margin: 5px;
 }
 
 body {
@@ -16,10 +17,14 @@ body {
   height: 100vh;
 }
 
-input{
-  background-color: aqua;
+input[type=text] {
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
+button:hover {
+  cursor: pointer;
+}
 td{
   margin-left: 5px;
   margin-right: 5px;
@@ -64,9 +69,17 @@ td{
   display: flex;
 }
 
-hr{
-  color: rgb(255, 0, 0);
+.qqq{
+  display: inline-block;
+  width: 50%;
+  flex-direction: column;
+  
 }
+
+select{
+  background-color: rgba(0, 11, 11, 0.785);
+}
+
 
 /* #submit {
   display: flex;

@@ -29,11 +29,11 @@ const newExercise = (req, res) => {
 // Show all Data
 const show = async (req, res) => {
     try {
-        const workout = await Workout.findById(req.params.id).populate('exerciseData').exec()
+        const workout = await Workout.findById(req.params.id).exec()
         if (!workout) {
             return res.status(404).send('Workout not found');
         }
-        res.redirect(`workouts/${workout._id}/details`, { title: 'Workout Details', workout, exerciseData: workout.exerciseData || [] });
+        res.render('workouts/show', { title: 'Workout Data', workout});
     } catch (err) {
         console.error('Error finding workout or exercise:', err);
         res.status(500).send('Internal Server Error');
@@ -71,21 +71,21 @@ const deleteWorkout = async (req, res) => {
 
 // Create Exercises Data in details/index
 const createExercise = async (req, res) => {
+    const workout = await Workout.findById(req.params.id);
+    workout.exerciseData.push(req.body)
+    if (!workout) {
+        return res.status(404).send('Could not create Exercises Data');
+    }
     try {
-        const workout = await Workout.findById(req.params.id);
-        workout.exerciseData.push(req.body)
-        if (!workout) {
-            return res.status(404).send('Could not create Exercises Data');
-        }
         await workout.save()
+        res.redirect('.')
     } catch (err) {
         console.log(err)
     }
-    res.redirect(`/workouts/${Workout._id}/details`)
 }
 
 // View the details page to input Exercise Data
-const viewWorkout = async (req, res) => {
+const viewDetails = async (req, res) => {
     try {
         const workout = await Workout.findById(req.params.id).populate('exerciseData') .exec();
         if(!workout){
@@ -105,6 +105,6 @@ module.exports = {
     create,
     createExercise,
     delete: deleteWorkout,
-    viewWorkout
+    viewDetails
 }
 

@@ -1,69 +1,27 @@
 <%- include('../partials/header') %>
 
-                        <form id="exerciseData" action="/workouts/<%= workout._id %>/details" method="POST">
-                            <div><strong>Name: </strong>
-                                <%= workout.name %>
-                            </div>
-                            <hr>
-                            <% for (let i=0; i < 6; i++) { %>
-                                <!-- <%= workout.sets %>
-                                <%= workout.reps %>
-                                <%= workout.weight %> -->
-                                <div>
-                                    <label"><strong>Exercise: <%= workout['exercise' + i ] %></strong> </label>
-                                </div>
-                                <label><strong>Sets: </strong> </label>
-                                <select name="sets<%= i %>">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
-                                </div>
+<div id="containerDetails">
 
-                                <div>
-                                    <label><strong>Reps: </strong> </label>
-                                    <select name="reps<%= i %>">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <input type="text" name="weight<%= i %>" placeholder="lbs">
-                                </div>
-                                <div>
-                                    <input type="submit" name="Add Exercise Info" id="">
-                                </div>
-                        </form>
+    <% for (let i=0; i < 6; i++) { %>
+        <ul>
+            <li>
+          <%= workout['exercise' + i ] %>
+      </li>
+      <li>
+          <label>Sets:</label>
+          <%= workout['exercise' + i ]['sets' + i ]%>
+        </li>
+        <li>
+            <label>Reps:</label>
+            <%= workout['exercise' + i ]['reps' + i ]%>
+        </li>
+        <li>
+            <label>Weight:</label>
+            <%= workout['exercise' + i ]['weight' + i ]%>
+        </li>
+    </ul>
+    <% } %>
+    <a href="/workouts" id="links">Back to Workouts</a>
+</div>
 
-                        <% } %>
-                            <br><br>
-                            <a href="/workouts/<%= workout._id %>">Back to Workouts</a>
-
-                            <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
