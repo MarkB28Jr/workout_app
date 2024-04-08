@@ -33,3 +33,18 @@ Create a professional view.
 Template for exercise you do.
 
 # Credits
+I recieved help from the following class members
+- Lillian
+- Eric
+- Ryan
+- Corey
+- Deep
+- Instructors
+- Glenn
+
+The following site I also used.
+- [W3 School](https://www.w3schools.com/css/css3_gradients.asp)
+- [W3 School](hhttps://www.w3schools.com/css/css_background.asp)
+
+Mainly use for helping to debug my code when I got confused
+- [BlackBox AI](https://www.blackbox.ai/)

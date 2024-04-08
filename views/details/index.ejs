@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+    <div id="containerDetails">
+        <% if (workout && workout.exerciseData && workout.exerciseData.length> 0) { %>
+            <% for (let i=0; i < workout.exerciseData.length; i++) { %>
+                <form action="/workouts/<%= workout._id %>/exerciseData/<%= i %>?_method=DELETE" method="POST">
+                    <label>Exercise Data: <%= workout.exerciseData[i] %>
+                            <button type="submit" id="deleteBtn"> X </button>
+                            <hr>
+                            <% } %>
+                                <% } else { %>
+                                    <p>No exercises found for this workout.</p>
+                                    <% } %>
+        </form></label>
+    </div>
+    <a href="/workouts" id="links">Back to Workouts</a>
+
+    <%- include('../partials/footer') %>

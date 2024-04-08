@@ -9,13 +9,12 @@
 <hr>
            <% for (let i=0; i < 6; i++) { %>
             <tbody>
-                <tc>
+                <tr>
                     <td>
                         <label"><strong>Exercise <%= [i + 1] %>: <%= workout['exercise' + i ] %></strong></label>
                         <hr>
                     </td>
                     <td>
-                        <%= workout.sets %>
                         <label><strong>Sets: </strong> </label>
                         <select name="sets<%= i %>">
                             <option value="0">0</option>
@@ -29,10 +28,10 @@
                             <option value="8">8</option>
                             <option value="9">9</option>
                             <option value="10">10</option>
-                        </select>
+                        </select>&nbsp;|&nbsp;
                     </td>
                     <td>
-                        <%= workout.reps %>
+  
                         <label><strong>Reps: </strong> </label>
                         <select name="reps<%= i %>">
                           <option value="0">0</option>
@@ -56,18 +55,18 @@
                           <option value="18">18</option>
                           <option value="19">19</option>
                           <option value="20">20</option>
-                        </select>
+                        </select>&nbsp;|&nbsp;
                     </td>
                     <td>
-                        <%= workout.weight %>
-                        <input type="text" name="weight<%= i %>" placeholder="lbs" id="input">
+                        <label>Weight: <input type="text" name="weight<%= i %>" placeholder="lbs" id="input"></label>
+                        
                     </td>
                     <td>
                     </td>
                     <td>
                     </td>
                     <hr>
-                </tc>
+                </tr>
             </tbody>
 
            <% } %>

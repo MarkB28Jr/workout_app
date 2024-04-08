@@ -69,6 +69,26 @@ const deleteWorkout = async (req, res) => {
     }
 };
 
+// Delete an exercise from a workout
+const deleteExercise = async (req, res) => {
+    const workoutId = req.params.id;
+    const exerciseIndex = req.params.exerciseIndex;
+    try {
+      const workout = await Workout.findById(workoutId);
+      if (!workout) {
+        return res.status(404).send('Workout not found');
+      }
+      workout.exerciseData.splice(exerciseIndex, 1);
+      await workout.save();
+  
+      res.redirect('back');
+    } catch (error) {
+      console.error('Error deleting exercise:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  };
+
+
 // Create Exercises Data in details/index
 const createExercise = async (req, res) => {
     const workout = await Workout.findById(req.params.id);
@@ -98,6 +118,8 @@ const viewDetails = async (req, res) => {
     }
 }
 
+
+
 module.exports = {
     index,
     show,
@@ -105,6 +127,7 @@ module.exports = {
     create,
     createExercise,
     delete: deleteWorkout,
-    viewDetails
+    viewDetails,
+    deleteExercise
 }
 
