@@ -3,11 +3,11 @@ const Exercise = require('../models/exercise');
 // index 
 const index = async (req, res) => {
     try {
-        const exercises = await Exercise.find({})
-        if (!exercises) {
+        const exercise = await Exercise.find({})
+        if (!exercise) {
             return res.status(404).send('Exercises not found');
         }
-        res.render('exercises/index', { title: 'Created exercises', exercises })
+        res.render('exercises/index', { title: 'Exercises List', exercise })
     } catch (err) {
         console.log(err)
         res.status(500).send('Error Finding  Exercises')
@@ -21,10 +21,21 @@ const show = async (req, res) => {
         if (!exercise) {
             return res.status(404).send('exercise not found');
         }
-        res.render('exercises/show', { title: 'exercise Data', exercise });
+        res.render('exercises/show', { title: 'Exercise Data', exercise });
     } catch (err) {
         console.error('Error finding exercise or exercise:', err);
         res.status(500).send('Internal Server Error');
+    }
+}
+
+// NEW EXERCISES
+const newExercise = (req, res) => {
+    try {
+        const exercise = new Exercise();
+        res.render('exercises/new', { title: 'Create Your ', exercise })
+    } catch (err) {
+        console.log(err)
+        res.status(500).send('Error Creating Your exercise')
     }
 }
 
@@ -32,9 +43,6 @@ const show = async (req, res) => {
 const create = async (req, res) => {
     try {
         const exercise = await Exercise.create(req.body);
-        if (!exercise) {
-            return res.status(404).send('Exercise not found');
-        }
         res.render('exercises/new', { title: 'Create Your exercise', exercise })
     } catch (err) {
         console.log(err)
@@ -42,16 +50,6 @@ const create = async (req, res) => {
     }
 }
 
-// NEW EXERCISES
-// const newExercise = (req, res) => {
-//     try {
-//         const exercise = new exercise();
-//         res.render('exercises/new', { title: 'Create Your exercise', exercise })
-//     } catch (err) {
-//         console.log(err)
-//         res.status(500).send('Error Creating Your exercise')
-//     }
-// }
 
 // Delete exercise from DB
 // const deleteexercise = async (req, res) => {
@@ -121,7 +119,7 @@ module.exports = {
     index,
     show,
     create,
-    // new: newExercise,
+    new: newExercise,
     // createExercise,
     // delete: deleteexercise,
     // viewDetails,

@@ -1,5 +1,43 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
+    <% exercise.forEach(function(e) { %>
+        <div id="exercisesList">
+            <div>Exercise Muscle Group: <%= e.muscleGroup %>
+            </div>
+            <br>
+            <div>Muscle Group Exercises: </div>
+            <div>
+                <%= e.exercise %>
+            </div>
+        </div>
+        <hr>
+        <% }) %>
 
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <select id="muscleGroup">
+                        <option value="">Select a muscle group</option>
+                        <option value="Quadriceps">Quadriceps</option>
+                        <option value="Glutes Hamstrings">Glutes Hamstrings</option>
+                        <option value="Calves">Calves</option>
+                        <option value="Chest">Chest</option>
+                        <option value="Back">Back</option>
+                        <option value="Shoulders">Shoulders</option>
+                        <option value="Triceps">Triceps</option>
+                        <option value="Biceps">Biceps</option>
+                        <option value="Abs">Abs</option>
+                    </select><br>
+                    <button class="dropbtn">Filter Muscle Group</button>
+                </div>
+            </div>
 
-<%- include('./partials/footer') %>
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <select id="exercises">
+                        <option value="">Select a muscle group first</option>
+                    </select><br>
+                    <button class="dropbtn">Exercises</button>
+                </div>
+            </div>
+
+                <%- include('../partials/footer') %>

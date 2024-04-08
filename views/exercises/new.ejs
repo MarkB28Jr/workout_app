@@ -1,5 +1,27 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
+<form id="addExercises" action="/exercises" method="POST">
+    <div>
+        <label for="muscleGroupName"><strong> Select Muscle Group:</strong></label>
+        <!-- <input type="text" name="muscleGroup" placeholder="Enter Muscle of Exercise"> -->
+        <select id="muscleGroup">
+            <option value="">Select a muscle group</option>
+            <option value="Quadriceps">Quadriceps</option>
+            <option value="Glutes Hamstrings">Glutes Hamstrings</option>
+            <option value="Calves">Calves</option>
+            <option value="Chest">Chest</option>
+            <option value="Back">Back</option>
+            <option value="Shoulders">Shoulders</option>
+            <option value="Triceps">Triceps</option>
+            <option value="Biceps">Biceps</option>
+            <option value="Abs">Abs</option>
+        </select>
 
+        <label for="exerciseName"><strong>Enter the Exercise: </strong></label>
+        <input type="text" name="exercise" placeholder="Enter Exercise">
+    </div>
+    <br>
+    <button name="submit">Submit</button>
+</form>
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>

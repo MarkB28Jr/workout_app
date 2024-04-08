@@ -12,11 +12,11 @@ router.get('/:id', exercisesCtrl.show);
 // POST workout
 router.post('/', exercisesCtrl.create)
 // GET Workout Details page
-router.get('/:id/details', exercisesCtrl.viewDetails);
+// router.get('/:id/details', exercisesCtrl.viewDetails);
 // // POST /push exercises in by id
-router.post('/:id/data', exercisesCtrl.createExercise)
+// router.post('/:id/data', exercisesCtrl.createExercise)
 // DELETE
-router.delete('/:id', exercisesCtrl.delete)
+// router.delete('/:id', exercisesCtrl.delete)
 
 
 

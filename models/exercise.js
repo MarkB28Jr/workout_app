@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
-const exercisesSchema = new Schema({
+const exerciseSchema = new Schema({
   muscleGroup: {
     type: String,
     unique: true
   },
-  exercises: [{
+  exercise: [{
     type: String,
     enum: []
   }]
@@ -21,7 +21,7 @@ const exercisesSchema = new Schema({
 <% }); %>
 </ul> */}
 
-{/* <h1>Calves Exercises</h1>
+{/*
 <ul>
   <% exercises.forEach(function(exercise) { %>
     <li><%= exercise.exercises.join(', ') %></li>
@@ -31,9 +31,8 @@ const exercisesSchema = new Schema({
 //   // Find all exercises for the Calves muscle group
 //   Exercise.find({ muscleGroup: 'Calves' }, function (err, exercises) {
 //     if (err) return handleError(err);
-//     // Render the EJS template and pass the exercises as a variable
 //     res.render('calves', { exercises: exercises });
 //   });
 // });
 
-module.exports = mongoose.model('Exercise', exercisesSchema)
+module.exports = mongoose.model('Exercise', exerciseSchema)

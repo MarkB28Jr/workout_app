@@ -17,7 +17,9 @@
             <% if (user) { %>
             <a href="/" id="links"<%- title==='HOME' ? 'class="active"' : '' %>>HOME</a>
             <a href="/workouts" id="links"<%- title==='WORKOUT' ? 'class="active"' : '' %>>WORKOUT</a>
-            <a href="/workouts/new" id="links"<%- title==='CREATE' ? 'class="active"' : '' %>>CREATE</a>
+            <a href="/workouts/new" id="links"<%- title==='CREATE WORKOUT' ? 'class="active"' : '' %>>CREATE WORKOUT</a>
+            <a href="/exercises" id="links"<%- title==='EXERCISES' ? 'class="active"' : '' %>>EXERCISES</a>
+            <a href="/exercises/new" id="links"<%- title==='CREATE EXERCISES' ? 'class="active"' : '' %>>CREATE EXERCISES</a>
             <a href="/logout" id="links">LOG OUT</a>
             <% } else { %>
               <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

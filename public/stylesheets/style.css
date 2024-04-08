@@ -4,7 +4,7 @@
   color: white;
 }
 
-#links, #detailsLink, a, h1, h2, label, div, select, table{
+#links, #detailsLink, a, h1, h2, label, select, table{
   color: gold;
   margin: 5px;
   font-size: 1.5vmin;
@@ -81,5 +81,12 @@ select{
 }
 
 td {
+  margin: 5px;
+}
+
+#exercisesList{
+  display: flex;
+  flex-direction: column;
+  font-size: 2vmin;
   margin: 5px;
 }
